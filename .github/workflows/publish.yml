@@ -1,0 +1,24 @@
+on:
+    workflow_call:
+        inputs:
+            pre-release:
+              required: true
+              type: boolean
+        secrets:
+            PYPI_TOKEN:
+              required: true
+
+jobs:
+    publish:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Install uv
+          uses: astral-sh/setup-uv@v6
+        - name: Run publish script
+          run: |
+            ./.github/scripts/publish.sh ${{ inputs.pre-release  }}
+          env:
+           UV_PUBLISH_TOKEN: ${{ secrets.PYPI_TOKEN }}
+          shell: bash

@@ -1,6 +1,6 @@
 [project]
 name = "say_hello_sample_library"
-version = "0.1.1"
+version = "0.1.2"
 description = "A sample package"
 readme = "README.md"
 authors = [

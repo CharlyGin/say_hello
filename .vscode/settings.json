@@ -3,7 +3,15 @@
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.formatOnSave": true
+  },
+
   "python.defaultInterpreterPath": "./venv/bin/python",
   "python.terminal.activateEnvironment": true,
-  "python.terminal.activateEnvInCurrentTerminal": true
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "yaml.format.enable": true
 }

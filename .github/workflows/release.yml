@@ -1,6 +1,3 @@
-# this file is *not* meant to cover or endorse the use of GitHub Actions, but rather to
-# help make automated releases for this project
-
 name: Release
 
 on:
@@ -9,18 +6,12 @@ on:
       - main
 
 jobs:
-  build-and-publish:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: Install uv
-      uses: astral-sh/setup-uv@v6
-    - name: Install build dependencies
-      run: uv sync
-    - name: Build
-      run: uv build
-    - name: Publish
-      uses: pypa/gh-action-pypi-publish@release/v1
-      with:
-        skip-existing: true
+  release:
+    uses: ./.github/workflows/test_release_publish.yml
+    permissions:
+      contents: write
+    with:
+      pre-release: false
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}

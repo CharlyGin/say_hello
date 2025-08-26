@@ -1,0 +1,9 @@
+{
+  "notebook.formatOnSave.enabled": true,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "python.defaultInterpreterPath": "./venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.activateEnvInCurrentTerminal": true
+}

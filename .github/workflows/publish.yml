@@ -7,6 +7,12 @@ on:
         secrets:
             PYPI_TOKEN:
               required: true
+    workflow_dispatch:
+      inputs:
+        pre-release:
+          required: true
+          type: boolean
+          description: 'Is this a pre-release?'
 
 jobs:
     publish:
